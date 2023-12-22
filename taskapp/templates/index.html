@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block main %}
+{{time}}
+
+<a href="/add_task">Добавить задачу</a>
+{% for i in data %}
+	{{i.id}}
+	{{i.name}}
+	{{i.define}}
+	<br>
+{% endfor%}
+
+<form method="post">
+	{% csrf_token %}
+	<input type="submit" name="delete" value="delete">
+</form>
+
+<a href="/delete_task/16">Удалить задачу</a>
+
+<a href="/code">Редактор кода</a>
+{% endblock main %}

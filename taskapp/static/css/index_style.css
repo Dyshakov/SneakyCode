@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 30%;
+
+}
+
+a:hover {
+  color: white;
+  background-color: black;
+}
+
+header {
+  text-align: center;
+  background-color: #333;
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
+  color: white;
+  font-size: 50px;
+}
+
+main {
+  justify-content: center;
+  height: 30vh;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  font-size: 40px;
+  background-color: #D5D5D5;
+}
+
+
+
+
