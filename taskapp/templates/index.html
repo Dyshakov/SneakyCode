@@ -7,13 +7,11 @@
 	{{i.id}}
 	{{i.name}}
 	{{i.define}}
+	<a href="/delete_task/{{ i.id }}"> Удалить задачу </a>
 	<br>
 {% endfor%}
 
-<form method="post">
-	{% csrf_token %}
-	<input type="submit" name="delete" value="delete">
-</form>
+
 
 <a href="/delete_task/16">Удалить задачу</a>
 

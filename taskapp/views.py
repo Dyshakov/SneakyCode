@@ -13,7 +13,7 @@ def delete_task(request, task_id):
 
 def index(request):
 	#sql запрос
-	sql_query = "DELETE FROM taskapp_task WHERE id = 10"
+	sql_query = "DELETE FROM taskapp_task WHERE id = 26"
 	#Прием post запроса
 	if request.method == "POST":
 		with connection.cursor() as cursor:
@@ -34,7 +34,7 @@ def postuser(request):
 	task_name = request.POST.get("task-name", "Undefined")
 	task_description = request.POST.get("task-description", 1)
 	task = Task.objects.create(name=task_name, define=task_description)
-	return HttpResponse(f"<h2>Task name: {task_name}  task description: {task_description}")
+	return redirect(index)
 
 def about(request):
 	return render(request, "about.html")
