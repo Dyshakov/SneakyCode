@@ -2,18 +2,28 @@
 {% block main %}
 {{time}}
 
-<a href="/add_task">Добавить задачу</a>
-{% for i in data %}
-	{{i.id}}
-	{{i.name}}
-	{{i.define}}
-	<a href="/delete_task/{{ i.id }}"> Удалить задачу </a>
-	<br>
-{% endfor%}
+
+<div class="conteiner">
+	<div class="task_menu">
+		<a href="/add_task">Добавить задачу</a>
+		<a href="/code">Редактор кода</a>
+	</div>
+		
+	<div class="tasks">
+		{% for i in data %}
+			{{i.id}}
+			{{i.name}}
+			{{i.define}}
+			<a href="/delete_task/{{ i.id }}"> Удалить задачу </a>
+			<br>
+		{% endfor%}
+	</div>
+</div>
 
 
 
-<a href="/delete_task/16">Удалить задачу</a>
 
-<a href="/code">Редактор кода</a>
+
+
+
 {% endblock main %}
