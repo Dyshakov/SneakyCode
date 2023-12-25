@@ -6,17 +6,22 @@
 <div class="conteiner">
 	<div class="task_menu">
 		<a href="/add_task">Добавить задачу</a>
-		<a href="/code">Редактор кода</a>
+		<a href="/code/{{ga}}">Редактор кода</a>
 	</div>
 		
 	<div class="tasks">
-		{% for i in data %}
-			{{i.id}}
-			{{i.name}}
-			{{i.define}}
-			<a href="/delete_task/{{ i.id }}"> Удалить задачу </a>
-			<br>
-		{% endfor%}
+		<div class="tasks_header"></div>
+		<div class="tasks_content">
+			{% for i in data %}
+				{{i.id}}
+				{{i.name}}
+				{{i.define}}
+				<a href="/delete_task/{{ i.id }}"> Удалить задачу </a>
+				<a href="/code/{{ i.define}}">Запустить код</a>
+				<br>
+			{% endfor%}
+		</div>
+		
 	</div>
 </div>
 

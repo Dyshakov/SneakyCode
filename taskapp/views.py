@@ -39,9 +39,9 @@ def postuser(request):
 def about(request):
 	return render(request, "about.html")
 
-def code(request):
+def code(request, code):
 	output = "default_output"
-	text_area_value = "#Write your python code here"
+	text_area_value = code
 	if request.method == "POST":
 		if "run" in request.POST:	
 			text_area_value = request.POST.get('my_text_area')
