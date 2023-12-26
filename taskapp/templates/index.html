@@ -13,11 +13,9 @@
 		<div class="tasks_header"></div>
 		<div class="tasks_content">
 			{% for i in data %}
-				{{i.id}}
 				{{i.name}}
-				{{i.define}}
-				<a href="/delete_task/{{ i.id }}"> Удалить задачу </a>
-				<a href="/code/{{ i.define}}">Запустить код</a>
+				<a class="tasks_content_button" href="/delete_task/{{ i.id }}"> Удалить задачу </a>
+				<a class="tasks_content_button" href="/code/{{ i.define}}">Запустить код</a>
 				<br>
 			{% endfor%}
 		</div>

@@ -72,7 +72,8 @@ main {
   font-size: 18px;
   border: 1px;
   text-align: left;
-  width: 95%;
+  width: 85%;
+  border-radius: 10px;
 }
 
 .tasks {
@@ -83,7 +84,12 @@ main {
 }
 
 .tasks a {
-  margin: 20px 0;
+  font-size: 18px;
+  max-width: 150px;
+  max-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tasks_header {
@@ -96,8 +102,16 @@ main {
 .tasks_content {
   background: rgba(0, 0, 0, 0.2);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100%;
   width: 100%;
+  justify-content: space-evenly;
+  color: white;
 }
 
+.tasks_content_button {
+  padding: 0 10px;
+  text-align: center;
+  background-color: rgba(33, 38, 45, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
