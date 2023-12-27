@@ -13,6 +13,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/cobalt.css' %}">
 </head>
 <body>
 	<script type="text/javascript" src="{% static 'script.js' %}"></script>
@@ -21,31 +22,31 @@
 		<h1>Python Interpreter</h1>
 	</header>
 
-	<div class="file_name_add">
-		<form method="post">
-			{% csrf_token %}
-			<input type="text">
-			<input type="submit" class="submit_button" value="Save" name="save_name">
-		</form>
-	</div>
+	
+
+
 
 	<div class="container">
 		<div class="input_area">
 			<div class="top_conteiner">main.py</div>
 
+
 			<form method="post">
 				{% csrf_token %}
 				<textarea id="myTextarea" name="my_text_area" rows="5" cols="5">{{ text_content }}</textarea>
-				
+					
 				<input type="submit" value="Run" name="run" class="submit_button">
 
-				<input type="submit" value="save" name="save" class="submit_button">
-				
+				<div class="file_name_add">
+					<input type="text" class="input_name_area" name="file_name">
+					<input type="submit" class="submit_button" value="Save" name="save">
+				</div>
 			</form>
-			<form method="post">
-				{% csrf_token %}
-				
-			</form>
+
+			<button class="submit_button save_button">Save</button>
+
+			
+
 		</div>
 
 		<div class="output_area">

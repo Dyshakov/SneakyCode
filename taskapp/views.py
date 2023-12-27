@@ -53,7 +53,8 @@ def code(request, code):
 			output = captured_output.getvalue()
 		if "save" in request.POST:
 			text_area_value = request.POST.get('my_text_area')
-			task = Task.objects.create(name="код", define=text_area_value)
+			file_name = request.POST.get('file_name')
+			task = Task.objects.create(name=file_name, define=text_area_value)
 	return render(request, "code.html", {"output": output , "text_content": text_area_value})
 
 

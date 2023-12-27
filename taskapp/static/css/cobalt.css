@@ -1,0 +1,85 @@
+/* Базовые стили редактора */
+.CodeMirror {
+    background: rgba(23, 12, 61, 0.2);
+    color: #ffffff;
+}
+
+/* Стили для номеров строк */
+.CodeMirror-linenumber {
+    color: #8f908a;
+}
+
+/* Стили для подсветки синтаксиса */
+/* Вы можете добавить или изменить эти стили в соответствии с нуждами вашего языка программирования */
+.CodeMirror span.cm-comment {
+    color: #0088ff;
+}
+.CodeMirror span.cm-string,
+.CodeMirror span.cm-string-2 {
+    color: #3ad900;
+}
+.CodeMirror span.cm-number {
+    color: #ff628c;
+}
+.CodeMirror span.cm-variable {
+    color: #ffffff;
+}
+.CodeMirror span.cm-variable-2 {
+    color: #82b1ff;
+}
+.CodeMirror span.cm-def {
+    color: #ffc600;
+}
+.CodeMirror span.cm-operator {
+    color: #ffffff;
+}
+.CodeMirror span.cm-keyword {
+    color: #ff9d00;
+}
+.CodeMirror span.cm-atom {
+    color: #ff628c;
+}
+.CodeMirror span.cm-meta {
+    color: #ffbb00;
+}
+.CodeMirror span.cm-tag {
+    color: #ffbb00;
+}
+.CodeMirror span.cm-attribute {
+    color: #ffbb00;
+}
+.CodeMirror span.cm-qualifier {
+    color: #ffbb00;
+}
+.CodeMirror span.cm-property {
+    color: #ffbb00;
+}
+.CodeMirror span.cm-builtin {
+    color: #ffbb00;
+}
+.CodeMirror span.cm-bracket {
+    color: #ffbb00;
+}
+
+/* Стили для активной строки */
+.CodeMirror .CodeMirror-activeline-background {
+    background: #000014;
+}
+
+/* Стили для выбранного текста */
+.CodeMirror .CodeMirror-selected {
+    background: #b36539;
+}
+
+.CodeMirror-gutters {
+    background: #0c1021; /* Фон для полосы с номерами строк */
+    color: lightgrey; /* Цвет текста номеров строк */
+    border-right: 1px solid #333; /* Граница между номерами строк и редактором */
+}
+
+.CodeMirror-linenumber {
+    padding: 0 3px 0 5px; /* Отступы для номеров строк */
+    min-width: 20px; /* Минимальная ширина области с номерами строк */
+    text-align: right; /* Выравнивание текста номеров строк по правому краю */
+    color: #80a0ff; /* Цвет номеров строк */
+}
