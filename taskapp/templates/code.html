@@ -20,6 +20,15 @@
 	<header>
 		<h1>Python Interpreter</h1>
 	</header>
+
+	<div class="file_name_add">
+		<form method="post">
+			{% csrf_token %}
+			<input type="text">
+			<input type="submit" class="submit_button" value="Save" name="save_name">
+		</form>
+	</div>
+
 	<div class="container">
 		<div class="input_area">
 			<div class="top_conteiner">main.py</div>
