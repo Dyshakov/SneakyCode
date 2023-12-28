@@ -85,8 +85,8 @@ main {
 
 .tasks a {
   font-size: 18px;
-  max-width: 150px;
-  max-height: 50px;
+  width: 150px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,10 +102,10 @@ main {
 .tasks_content {
   background: rgba(0, 0, 0, 0.2);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100%;
   width: 100%;
-  justify-content: space-evenly;
+  
   color: white;
 }
 
@@ -114,4 +114,71 @@ main {
   text-align: center;
   background-color: rgba(33, 38, 45, 0.4);
   border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.buttons_conteiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.code_file {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.file_name {
+  text-align: center;
+}
+
+
+/* Основные стили */
+
+
+/* Медиа запросы */
+
+@media (max-width: 970px) {
+  .code_file {
+    font-size: 30px;
+  }
+
+  .tasks a {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 750px) {
+  .code_file {
+    font-size: 20px;
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 450px) {
+  .code_file {
+    font-size: 15px;
+  }
+
+  .tasks a {
+    max-width: 300px;
+  }
+
+  .task_menu {
+    width: 200px;
+  }
+
+  .task_menu a {
+    font-size: 12px;
+  }
+
+  .tasks_content_button {
+    font-size: 10px;
+    max-width: 300px;
+  }
+
+  .buttons_conteiner {
+    flex-direction: column;
+    align-items: center;
+  }
 }

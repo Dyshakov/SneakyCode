@@ -13,10 +13,16 @@
 		<div class="tasks_header"></div>
 		<div class="tasks_content">
 			{% for i in data %}
-				{{i.name}}
-				<a class="tasks_content_button" href="/delete_task/{{ i.id }}"> Удалить задачу </a>
-				<a class="tasks_content_button" href="/code/{{ i.id }}">Запустить код</a>
-				<br>
+				<div class="code_file">
+					<div class="file_name">{{i.name}}</div>
+					<div class="buttons_conteiner">
+						<a class="tasks_content_button" href="/delete_task/{{ i.id }}"> Удалить файл </a>
+						<a class="tasks_content_button" href="/code/{{ i.id }}">Запустить код</a>
+					</div>
+					<br>
+				</div>
+				
+				
 			{% endfor%}
 		</div>
 		
