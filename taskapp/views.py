@@ -39,9 +39,13 @@ def postuser(request):
 def about(request):
 	return render(request, "about.html")
 
-def code(request):
+def code(request, code):
 	output = "default_output"
-	text_area_value = "#Write your python code here"
+	text_area_value = '#Write your python code here'
+	if code != 'default_code':
+		task = Task.objects.get(id=code)
+		text_area_value = task.define.replace('<br>', '')
+
 	if request.method == "POST":
 		if "run" in request.POST:	
 			text_area_value = request.POST.get('my_text_area')
@@ -53,7 +57,9 @@ def code(request):
 			output = captured_output.getvalue()
 		if "save" in request.POST:
 			text_area_value = request.POST.get('my_text_area')
-			task = Task.objects.create(name="код", define=text_area_value)
+			saved_code = text_area_value.replace('\n', '<br>') #Заменяем символы переноса строки на HTML теги <br>
+			file_name = request.POST.get('file_name')
+			task = Task.objects.create(name=file_name, define=saved_code)  #Создаем новую строчку в таблице taskapp_task и записываем в нее наш код
 	return render(request, "code.html", {"output": output , "text_content": text_area_value})
 
 

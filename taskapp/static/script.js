@@ -5,6 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const editor = CodeMirror.fromTextArea(myTextarea, {
         mode: "python", // Указываем режим Python
         lineNumbers: true, // Отображение номеров строк
-        theme: "default", // Установка темы (по умолчанию)
+        theme: "cobalt", // Установка темы (по умолчанию)
+    });
+
+    var code_name_window = document.querySelector(".file_name_add"); // форма для назначения имени сохраняемого файла
+
+    var button = document.querySelector(".save_button"); // кнопка для сохранения кода
+    button.addEventListener("click", function () {
+        code_name_window.style.display = 'flex';
     });
 });
+
+
