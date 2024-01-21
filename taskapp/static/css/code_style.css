@@ -23,9 +23,7 @@ body {
 	height: 25%;
 	margin-right: 30px;
 	border-radius: 1%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	
 
 }
 
@@ -44,12 +42,12 @@ body {
 .submit_button {
 	background: linear-gradient(rgba(24, 32, 79, 0.8) 0%, rgba(24, 32, 79, 0.8) 100%);
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 40px, rgba(255, 255, 255, 0.2) 0px 0px 0px 0.5px inset;
-	border-radius: 10px;
 	color: lightgray;
-	width: 300px;
-	height: 50px;
+	width: 80px;
+	height: 40px;
 	cursor: pointer;
 	border: 1px solid black;
+	font-weight: bold;
 }
 
 .submit_button:hover {
@@ -95,11 +93,66 @@ header h1 {
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 40px, rgba(255, 255, 255, 0.2) 0px 0px 0px 0.5px inset;
 	font-family: 'Roboto Slab', serif;
 	display: flex;
-	justify-content: center;
+	justify-content: ;
 	align-items: center;
 	font-size: 25px;
+	justify-content: ;
 }
 
+.top_conteiner .submit_button {
+	margin-right: 30px;
+}
+
+.tabs_conteiner {
+	height: 100%;
+	display: flex;
+}
+
+
+.tab {
+	background-color: rgba(0, 0, 0, 0.6);
+	height: 100%;
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+}
+
+.active_tab {
+	background-color: gray;
+}
+.new_file {
+	background-color: rgba(0, 0, 0, 0.6);
+	height: 100%;
+	width: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	margin-left: 10px;
+	cursor: pointer;
+	transition: 1s background-color;
+}
+
+.new_file:hover {
+	background-color: gray;
+}
+
+.tab_close {
+	width: 20px;
+	height: 20px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	border-radius: 10px;
+	margin-left: 30px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: 1s all;
+}
+
+.tab_close:hover {
+	background-color: gray;
+}
 
 .file_name_add {
 	width: 500px;
@@ -135,13 +188,21 @@ header h1 {
 }
 
 @media (max-width: 780px) {
-	.submit_button {
-		width: 200px;
+	.tab {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.top_conteiner .submit_button {
+		width: 100%;
+	}
+
+	.top_conteiner {
+		flex-direction: column;
 	}
 }
 
 @media (max-width: 530px) {
-	.submit_button {
-		width: 100px;
-	}
+	
 }

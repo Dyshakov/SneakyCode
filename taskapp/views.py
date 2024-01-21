@@ -56,7 +56,7 @@ def code(request, code):
 			exec(text_area_value)
 			output = captured_output.getvalue()
 		if "save" in request.POST:
-			text_area_value = request.POST.get('my_text_area')
+			text_area_value = request.POST.get('active_tabContent')
 			saved_code = text_area_value.replace('\n', '<br>') #Заменяем символы переноса строки на HTML теги <br>
 			file_name = request.POST.get('file_name')
 			task = Task.objects.create(name=file_name, define=saved_code)  #Создаем новую строчку в таблице taskapp_task и записываем в нее наш код
