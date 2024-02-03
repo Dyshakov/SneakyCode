@@ -1,15 +1,30 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    tabClose = document.querySelector(".tab_close");
+    tabClose.addEventListener("click", function() {
+       closeTab(0);
+    });
+
+    tab = document.querySelector(".tab.tab-0");
+    tab.addEventListener("click", function(event) {
+        selectTab(event, 0);
+    });
+
+
+
     //Добавление подсветки input_area
 
-    const myTextarea = document.getElementById("myTextarea");
+    const myTextarea = document.getElementById("myTextarea-0");
 
     const editor = CodeMirror.fromTextArea(myTextarea, {
         mode: "python", // Указываем режим Python
         lineNumbers: true, // Отображение номеров строк
         theme: "cobalt", // Установка темы (по умолчанию)
     });
+
+    const codeMirrorWrapper = editor.getWrapperElement();
+        codeMirrorWrapper.id = 'codeMirror-' + 0;
 
 
     // При нажатии на кнопку save показать форму сохранения файла
@@ -31,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // При нажатии на + добавление нового текстового поля
 
     new_file_button.addEventListener("click", function() {
-        console.log("file add wclick");
         const tab = document.createElement("div");                     //создание новой вкладки
         const tabClose = document.createElement("div");                //добавление кнопки закрытия вкладки
         const tabContent = document.createElement('textarea');         //создание нового текстового поля
@@ -52,6 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
         tab.insertBefore(tabClose, tab.lastElementChild);
         tabClose.onclick = function(event) {closeTab(tabClose.id)};
 
+
+
         //Убираем другие текстовые поля
         HideTextArea();
 
@@ -59,8 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         //Вставляем новое текстовое поле
         document.querySelector('.form').insertBefore(tabContent, document.querySelector('.form').lastElementChild);
-        addTextArea(tabContent, tabIndex)
-
+        addTextArea(tabContent, tabIndex);
+        
+        //Делаем новую вкладку текущей
+        selectTab({ currentTarget: tab }, tabIndex);
     });
 
     // Выделение вкладки при клике на нее
@@ -77,6 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
             tab.classList.remove('active_tab');
         });
 
+        event.currentTarget.classList.add('active_tab');
+
         //записываем в переменную текущую textArea
         tabContent = document.querySelector('#myTextarea-' + tabIndex)
 
@@ -86,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
         //добавляем к активной textArea имя active_tabContent
         tabContent.setAttribute('name', 'active_tabContent');
 
-        event.currentTarget.classList.add('active_tab');
+        
 
         
 
@@ -117,11 +137,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function closeTab(tabIndex) {
+        const editor = document.querySelector('#codeMirror-' + tabIndex);
+        editor.parentNode.removeChild(editor);
         document.querySelector('#myTextarea-' + tabIndex).remove();
         document.querySelector('.tab.tab-' + tabIndex).remove();
-    }
+        selectTab({currentTarget: document.querySelector(".tab.tab-2")}, 2);
 
-    
+    }
 
 });
 

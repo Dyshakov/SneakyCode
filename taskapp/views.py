@@ -48,7 +48,7 @@ def code(request, code):
 
 	if request.method == "POST":
 		if "run" in request.POST:	
-			text_area_value = request.POST.get('my_text_area')
+			text_area_value = request.POST.get('active_tabContent')
 
 			captured_output = StringIO()
 			sys.stdout = captured_output
